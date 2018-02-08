@@ -2,6 +2,8 @@
 ini_set("display_errors", 1);
 error_reporting(E-ALL);
 
+include ("classes/user.php");
+
 $user1 = new User();
 $user2 = new User();
 $user3 = new User();
@@ -19,4 +21,4 @@ $user3->login();
 
 $user1->logout();
 
-echo $user1->getUsername();
+echo "bob logged out...........".$user1->getUsername();

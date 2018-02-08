@@ -36,7 +36,7 @@ class User {
      */
     function setUsername($_username)
     {
-        $this->username = $_username;
+        $this->_username = $_username;
     }
 
     /**
@@ -48,7 +48,7 @@ class User {
     {
         if(strlen($_password) >= 6)
         {
-            $this->password = $_password;
+            $this->_password = $_password;
         }
         else
         {
@@ -61,18 +61,18 @@ class User {
      * The login function looks through the
      * include file array to determine if the
      * login attempt was successful or not.
-     * @param $username
-     * @param $password
      */
     function login()
     {
-        include ("users.php");
+        //include ("users.php");
+        $users = array('bob' => 'chocolateCake');
         foreach ($users as $name => $pass)
         {
-            if($this->_username == $name && $this->_password == $pass)
+            if($this->_username == $name AND $this->_password == $pass)
             {
-                echo "<p>&username is logged in.</p>";
+                echo "<p>$this->_username is logged in.</p>";
                 $this->_loggedIn = true;
+                return;
             }
         }
         echo '<p>Login Error.</p>';
