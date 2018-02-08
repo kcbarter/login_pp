@@ -33,4 +33,25 @@ class User {
             return false;
         }
     }
+
+    function login($username, $password)
+    {
+        include ("users.php");
+        foreach ($users as $name => $pass)
+        {
+            if($username == $name && $password == $pass)
+            {
+                echo "<p>&username is logged in.</p>";
+                $this->_loggedIn = true;
+            }
+        }
+        echo '<p>Login Error.</p>';
+    }
+
+    function logout()
+    {
+        $this->_username = "";
+        $this->_password = "";
+        $this->_loggedIn = false;
+    }
 }
