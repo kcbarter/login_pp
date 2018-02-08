@@ -89,3 +89,4 @@ class User {
         $this->_loggedIn = false;
     }
 }
+
