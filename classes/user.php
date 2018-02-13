@@ -1,6 +1,7 @@
 <?php
-ini_set("display_errors", 1);
-error_reporting(E-ALL);
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
 
 /**
  * Class User
@@ -15,7 +16,7 @@ class User {
     /**
      * This is a default constructor that takes no parameters.
      */
-    function __contruct(){
+    function __construct(){
         $this->_username = "";
         $this->_password = "";
         $this->_loggedIn = false;
@@ -34,7 +35,7 @@ class User {
      * This is a setter for username
      * @param $_username
      */
-    function setUsername($_username)
+    public function setUsername($_username)
     {
         $this->_username = $_username;
     }
@@ -44,7 +45,7 @@ class User {
      * @param $_password
      * @return bool
      */
-    function setPassword($_password)
+    public function setPassword($_password)
     {
         if(strlen($_password) >= 6)
         {
@@ -90,3 +91,4 @@ class User {
     }
 }
 
+?>

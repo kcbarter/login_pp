@@ -1,8 +1,5 @@
 <?php
-ini_set("display_errors", 1);
-error_reporting(E-ALL);
 
-include ("classes/user.php");
 include ("classes/admin.php");
 
 $user1 = new Admin("bob", "chocolateCake", 1);
@@ -19,9 +16,11 @@ $user1->login();
 $user2->login();
 $user3->login();
 
-echo "level: ".$user1->getAccessLevel();
+echo '<p>level: '.$user1->getAccessLevel().'</p>';
 $user1->editUser($user2);
 
 $user1->logout();
 
 echo "bob logged out...........".$user1->getUsername();
+
+echo "woop";

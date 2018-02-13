@@ -23,6 +23,8 @@ class Admin extends User{
 
     function editUser(User $user)
     {
-        echo 'Editing '.$user->getUsername();
+        echo '<p>Editing '.$user->getUsername().'</p>';
     }
 }
+
+?>
